@@ -40,7 +40,7 @@ void ViaPoint::getTrajectory()
   for( double t_now=0; t_now<=t_fin; t_now+=0.01 ) {
 	if( t_now>=0 && t_now<=t_via ) {
 	  q << a5(0)*pow(t_now,5) + a4(0)*pow(t_now,4) + a3(0)*pow(t_now,3) + q_ini(0),
-		0,
+		a5(1)*pow(t_now,5) + a4(1)*pow(t_now,4) + a3(1)*pow(t_now,3) + q_ini(1),
 		a5(2)*pow(t_now,5) + a4(2)*pow(t_now,4) + a3(2)*pow(t_now,3) + q_ini(2);
 
 	  data1 << q(0) << endl;
@@ -48,7 +48,7 @@ void ViaPoint::getTrajectory()
 	}
 	else if( t_now>t_via && t_now<= t_fin ) {
 	  q << a5(0)*pow(t_now,5) + a4(0)*pow(t_now,4) + a3(0)*pow(t_now,3) + q_ini(0) + (pi1(0)/24)*pow(t_now-t_via,4) + (pi2(0)/120)*pow(t_now-t_via,5),
-		0,
+		a5(1)*pow(t_now,5) + a4(1)*pow(t_now,4) + a3(1)*pow(t_now,3) + q_ini(1) + (pi1(1)/24)*pow(t_now-t_via,4) + (pi2(1)/120)*pow(t_now-t_via,5),
 		a5(2)*pow(t_now,5) + a4(2)*pow(t_now,4) + a3(2)*pow(t_now,3) + q_ini(2) + (pi1(2)/24)*pow(t_now-t_via,4) + (pi2(2)/120)*pow(t_now-t_via,5);
 
 	  data1 << q(0) << endl;
