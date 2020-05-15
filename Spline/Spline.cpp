@@ -1,4 +1,4 @@
-/* 5$B<!%9%W%i%$%s6J@~(B */
+/* 5次スプライン曲線 */
 #include <iostream>
 #include <vector>
 #include <fstream>
